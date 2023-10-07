@@ -6,45 +6,10 @@ const openai = new OpenAI({
     apiKey: process.env.API_KEY
 });
 
-// "message" contains a JSON with the body text of its response and the role of the responder (assistant = ChatGPT)
-//const response = chat.choices[0].message.content;
-
 import http from "http";
 import express from "express";
 
 const app = express();
-
-const requestListener =async (req, res) => {
-    console.log("Request incoming...");
-    res.end(description);
-};
-
-var server = http.createServer(requestListener);
-
-/* var server = http.createServer(async (req, res) => {
-    console.log(req.url, req.method);
-
-    res.setHeader('Content-Type', 'text/html');
-
-    var prompt = 'In a short paragraph, describe what phosphoric acid is.';
-
-    const chat = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [{role:"user", content:prompt}],
-    });
-    const request = chat;
-    //console.log(request);
-
-    
-    res.write('<h1>'.concat(prompt,'</h1>'));
-    const response = chat.choices[0].message.content;
-    res.write('<p>'.concat(response,'</p>'));
-    res.end();
-}); */
-
-/* server.listen(5000, 'localhost', () => {
-    console.log("Listening for requests...")
-}); //3 - listen for any incoming requests */
 
 app.listen(5000);
 
